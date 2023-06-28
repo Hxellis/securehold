@@ -7,12 +7,12 @@ import busio
 from digitalio import DigitalInOut, Direction
 import adafruit_fingerprint
 
-import RPi.GPIO as GPIO
-from mfrc522 import SimpleMFRC522
+#import RPi.GPIO as GPIO
+#from mfrc522 import SimpleMFRC522
 
-Tag_ID = "698885712740"
+#Tag_ID = "698885712740"
 
-read = SimpleMFRC522()
+#read = SimpleMFRC522()
 
 #RELAY_PIN = 19;
 
@@ -38,18 +38,17 @@ finger = adafruit_fingerprint.Adafruit_Fingerprint(uart)
 
 
 def get_fingerprint():
-    """Get a finger print image, template it, and see if it matches!"""
-    print("Waiting for image...")
-    
-    while finger.get_image() != adafruit_fingerprint.OK:
-        pass
-    print("Templating...")
-    if finger.image_2_tz(1) != adafruit_fingerprint.OK:
-        return False
-    print("Searching...")
-    if finger.finger_search() != adafruit_fingerprint.OK:
-        return False
-    return True
+ """Get a finger print image, template it, and see if it matches!"""
+     print("Waiting for image...")
+     while finger.get_image() != adafruit_fingerprint.OK:
+         pass
+     print("Templating...")
+     if finger.image_2_tz(1) != adafruit_fingerprint.OK:
+         return False
+     print("Searching...")
+     if finger.finger_search() != adafruit_fingerprint.OK:
+         return False
+ return True
 
 
 # pylint: disable=too-many-branches
