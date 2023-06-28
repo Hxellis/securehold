@@ -1,3 +1,5 @@
+#https://codeload.github.com/panhavad/as608-fingerprint-python-lib/zip/refs/heads/main
+
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 from time import sleep
